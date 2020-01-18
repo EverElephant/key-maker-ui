@@ -1,15 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
-import Home from '../views/Home.vue'
+import Login from '../views/Login'
+import Register from '../views/Register'
+import Home from '../views/Home'
+import MakeKey from '../views/MakeKey'
+import Download from '../views/Download'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'login',
+    name: 'main',
     component: Login
   },
   {
@@ -25,7 +27,18 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Home,
+    children:[
+      {
+          path:'/makeKey',
+          name:'makeKey',
+          component:MakeKey
+      },{
+        path:'/download',
+        name:'download',
+        component:Download
+      }
+    ]
   }
 ]
 

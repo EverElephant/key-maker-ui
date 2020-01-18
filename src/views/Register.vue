@@ -30,16 +30,13 @@
                 var router = this.$router
                 var message = this.$message
                 this.$axios.post('/sys/register', this.qs.stringify(this.form))
-                    .then(function (response) {
-                        if (response.data.code == 1000) {
-                            router.push("makeKey");
+                    .then(function (res) {
+                        if (res.data.code == 1000) {
+                            router.push("home");
                         } else {
-                            message(response.data.msg);
+                            message(res.data.msg);
                         }
                     })
-                    .catch(function (error) {
-                        alert(error);
-                    });
             },
             back() {
                 this.$router.back()

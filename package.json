@@ -38,6 +38,10 @@
     ],
     "parserOptions": {
       "parser": "babel-eslint"
+    },
+    "rules": {
+      "vue/no-unused-components": "warning",
+      "vue/no-unused-vars": "warning"
     }
   },
   "browserslist": [
